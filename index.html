@@ -1,91 +1,28 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>Question</title>
-
-<style>
-
-body{
-font-family: Arial, sans-serif;
-background: #111;
-color: white;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-height: 100vh;
-margin: 0;
-}
-
-h1{
-font-size: 40px;
-margin-bottom: 40px;
-}
-
-.buttons{
-position: relative;
-}
-
-button{
-font-size: 20px;
-padding: 12px 25px;
-margin: 10px;
-border: none;
-border-radius: 8px;
-cursor: pointer;
-}
-
-#yes{
-background: #4CAF50;
-color: white;
-}
-
-#no{
-background: #ff4444;
-color: white;
-position: absolute;
-}
-
-</style>
+    <title>Valentine's Page</title>
+    <style>
+        .yes-button {
+            transition: transform 0.3s;
+        }
+        .no-button:hover + .yes-button {
+            transform: scale(1.2);
+        }
+        .emoji {
+            transition: transform 0.3s;
+        }
+        .emoji:hover {
+            transform: scale(1.3);
+        }
+        .emoji:active {
+            transform: scale(1.1);
+        }
+    </style>
 </head>
-
 <body>
-
-<h1>Will you be my valentine? </h1>
-
-<div class="buttons">
-
-<button id="yes">YES</button>
-<button id="no">NO</button>
-
-</div>
-
-<script>
-
-const noButton = document.getElementById("no");
-const yesButton = document.getElementById("yes");
-
-noButton.addEventListener("mouseover", () => {
-
-const x = Math.random() * (window.innerWidth - 100);
-const y = Math.random() * (window.innerHeight - 100);
-
-noButton.style.left = x + "px";
-noButton.style.top = y + "px";
-
-});
-
-yesButton.addEventListener("click", () => {
-
-document.body.innerHTML = `
-<h1 style="font-size:50px"> )))🥰</h1>
-<p>Ты нажал YES</p>
-`;
-
-});
-
-</script>
-
+    <h1>Happy Valentine's Day!</h1>
+    <button class="no-button">No ❤️</button>
+    <button class="yes-button emoji">Yes 🎉</button>
 </body>
 </html>
